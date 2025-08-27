@@ -1,20 +1,30 @@
-import { useState, type ChangeEvent, type ReactElement } from "react";
+import { type ChangeEvent, type ReactElement } from "react";
 
-export const InputTextField = (): ReactElement => {
-  const [inputValue, setInputValue] = useState<string>("");
+interface InputTextFieldProps {
+  value: string;
+  setValue: (value: string) => void;
+}
 
+export const InputTextField = ({
+  value,
+  setValue,
+}: InputTextFieldProps): ReactElement => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setInputValue(e.target.value);
+    setValue(e.target.value);
 
   return (
-    <>
-      <label htmlFor="description">Description</label>
+    <div className="input-group">
       <input
+        className="input-box"
         type="text"
         name="description"
-        value={inputValue}
+        placeholder="Description"
+        value={value}
         onChange={handleChange}
       ></input>
-    </>
+      <label htmlFor="description" className="label">
+        Description
+      </label>
+    </div>
   );
 };

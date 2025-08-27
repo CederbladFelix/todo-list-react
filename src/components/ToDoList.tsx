@@ -1,11 +1,11 @@
-import { useState, type ReactElement } from "react";
-import type { ToDoType } from "../types";
+import { type ReactElement } from "react";
+import type { ToDoArrayProps } from "../types";
 import { ToDo } from "./ToDo";
-import { toDoListData } from "./Data";
 
-export const ToDoList = (): ReactElement => {
-  const [toDoArray, setToDoArray] = useState<ToDoType[]>(toDoListData);
-
+export const ToDoList = ({
+  toDoArray,
+  setToDoArray,
+}: ToDoArrayProps): ReactElement => {
   const handleToggle = (id: number) => {
     setToDoArray((prev) =>
       prev.map((toDo) =>
