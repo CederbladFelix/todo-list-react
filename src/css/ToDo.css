@@ -5,6 +5,8 @@
   width: 40rem;
   padding-block: 1rem;
   padding-inline: 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid black;
 }
 
 .done {
