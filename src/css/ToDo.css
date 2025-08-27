@@ -1,0 +1,12 @@
+.todo-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(0, 255, 255, 0.5);
+  width: 40rem;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+}
+
+.done {
+  text-decoration: line-through;
+}
