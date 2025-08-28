@@ -14,6 +14,10 @@ export const ToDoList = ({
     );
   };
 
+  const handleTrashIconClick = (id: number) => {
+    setToDoArray((prev) => prev.filter((toDo) => toDo.id !== id));
+  };
+
   return (
     <div id="todo-list-container">
       {toDoArray.map((toDo) => {
@@ -24,6 +28,7 @@ export const ToDoList = ({
             description={toDo.description}
             done={toDo.done}
             onToggle={handleToggle}
+            onTrashIconClick={handleTrashIconClick}
           />
         );
       })}

@@ -5,6 +5,7 @@ interface ToDoProps {
   done: boolean;
   description: string;
   onToggle: (id: number) => void;
+  onTrashIconClick: (id: number) => void;
 }
 
 export const ToDo = ({
@@ -12,18 +13,25 @@ export const ToDo = ({
   done,
   description,
   onToggle,
+  onTrashIconClick,
 }: ToDoProps): ReactElement => {
   return (
     <div className={`todo-container ${done ? "done" : ""}`}>
       <p>{id}</p>
       <p>{description}</p>
-      <label>
+      <div className="todo-button-container">
+        <span
+          onClick={() => onTrashIconClick(id)}
+          className="material-symbols-outlined"
+        >
+          delete
+        </span>
         <input
           type="checkbox"
           checked={done}
           onChange={() => onToggle(id)}
         ></input>
-      </label>
+      </div>
     </div>
   );
 };
