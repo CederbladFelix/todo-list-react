@@ -1,11 +1,13 @@
 import { type ChangeEvent, type ReactElement } from "react";
 
 interface InputTextFieldProps {
+  name: string;
   value: string;
   setValue: (value: string) => void;
 }
 
 export const InputTextField = ({
+  name,
   value,
   setValue,
 }: InputTextFieldProps): ReactElement => {
@@ -17,13 +19,13 @@ export const InputTextField = ({
       <input
         className="input-box"
         type="text"
-        name="description"
-        placeholder="Description"
+        name={name}
+        placeholder=" "
         value={value}
         onChange={handleChange}
       ></input>
-      <label htmlFor="description" className="label">
-        Description
+      <label htmlFor={name} className="label">
+        {name}
       </label>
     </div>
   );

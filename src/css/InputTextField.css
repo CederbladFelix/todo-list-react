@@ -1,8 +1,6 @@
 .input-group {
   --transition: all 0.3s ease;
   position: relative;
-  display: flex;
-  justify-content: center;
 }
 
 .input-group .input-box {
@@ -19,8 +17,8 @@
   color: rgba(0, 0, 0, 0.5);
   font-size: 0.75rem;
   top: 50%;
-  left: 30%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding-inline: 5px;
   background-color: white;
   transition: var(--transition);

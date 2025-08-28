@@ -27,6 +27,8 @@ export const ToDoList = ({
             id={toDo.id}
             description={toDo.description}
             done={toDo.done}
+            author={toDo.author}
+            timestamp={toDo.timestamp}
             onToggle={handleToggle}
             onTrashIconClick={handleTrashIconClick}
           />

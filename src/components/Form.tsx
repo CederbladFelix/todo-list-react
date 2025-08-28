@@ -10,26 +10,40 @@ export const Form = ({
   nextId,
   setNextId,
 }: FormProps): ReactElement => {
-  const [inputValue, setInputValue] = useState<string>("");
+  const [descriptionInputValue, setDescriptionInputValue] =
+    useState<string>("");
+  const [authorInputValue, setAuthorInputValue] = useState<string>("");
 
   const handleOnSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (inputValue.length === 0) return;
+    if (descriptionInputValue.length === 0) return;
 
     const newTodo = {
       id: nextId,
-      description: inputValue,
+      description: descriptionInputValue,
       done: false,
+      author: authorInputValue,
+      timestamp: new Date(),
     };
 
     setToDoArray((prev) => [...prev, newTodo]);
-    setInputValue("");
+    setDescriptionInputValue("");
+    setAuthorInputValue("");
     setNextId((prev) => prev + 1);
   };
   return (
     <form id="form" onSubmit={handleOnSubmit}>
       <h3>New Todo</h3>
-      <InputTextField value={inputValue} setValue={setInputValue} />
+      <InputTextField
+        name="Description"
+        value={descriptionInputValue}
+        setValue={setDescriptionInputValue}
+      />
+      <InputTextField
+        name="Author"
+        value={authorInputValue}
+        setValue={setAuthorInputValue}
+      />
       <SubmitButton />
     </form>
   );

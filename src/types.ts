@@ -2,6 +2,8 @@ export interface ToDoType {
   id: number;
   done: boolean;
   description: string;
+  author: string;
+  timestamp: Date;
 }
 
 export interface ToDoArrayProps {

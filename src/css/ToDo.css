@@ -3,21 +3,37 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgba(0, 255, 255, 0.5);
-  width: 40rem;
+  width: 50rem;
   padding-block: 1rem;
   padding-inline: 2rem;
   border-radius: 0.5rem;
   border: 2px solid black;
 }
 
+.todo-right-container {
+  display: flex;
+  width: 20rem;
+  justify-content: space-between;
+}
+
+.todo-container .description {
+  max-width: 20rem;
+  flex: 1;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
 .todo-button-container {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  position: relative;
 }
 
 .todo-container span {
   cursor: pointer;
+  position: absolute;
+  left: 20px;
 }
 
 .done {
